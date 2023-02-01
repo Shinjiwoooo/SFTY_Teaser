@@ -1,31 +1,59 @@
 
 const playBtn = document.querySelector('.arrow')
 const youTubePopup = document.querySelector('.youTube')
+const closePopup = document.querySelector('.exit')
+
+
 const linkPopup = document.querySelector('.user_acquisition')
 const closePopup_2 = document.querySelector('.exit_2')
-const closePopup = document.querySelector('.exit')
+
+
+const pre_registrationPopup = document.querySelector('.pre-registration')
+const closePopup_3 = document.querySelector('.exit_3')
+
 const m_menubar = document.querySelector('.m_menubar')
 const openMobileMenu = document.querySelector('.m_menu')
 const mobile_content  = document.querySelector('.gnb_wrap')
 const closeMobileMenu = document.querySelector('.m_close')
 const m_menu_target = document.querySelectorAll('.m_content a')
+
 // querySelectorAll 은 배열형태로 잡힌다.
 const pc_menu_target = document.querySelectorAll('.pc_menu li')
 let targetBody = document.querySelector('body');
 
 
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
 
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 function show_popup(){
     youTubePopup.classList.remove("close")
 }
 
 function close_popup(){
     youTubePopup.classList.add("close")
-   
 }
 
 function close_linkpopup(){
     linkPopup.classList.add("close")
+}
+
+function close_bannerpopup(){
+    pre_registrationPopup.classList.add("close")
 }
 
 function open_menu(){
@@ -141,11 +169,8 @@ for (var i = 0; i < pc_menu_target.length; i++) {
 playBtn.addEventListener("click", show_popup)
 closePopup.addEventListener("click", close_popup)
 closePopup_2.addEventListener("click",close_linkpopup)
+closePopup_3.addEventListener("click",close_bannerpopup)
 youTubePopup.addEventListener("click", close_popup)
 m_menubar.addEventListener("click", open_menu)
 closeMobileMenu.addEventListener("click", close_menu)
 window.addEventListener('resize' , hide_mobile_menu)
-
-
-
-

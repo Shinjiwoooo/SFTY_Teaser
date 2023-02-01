@@ -10,6 +10,17 @@
         /* height: 193.96px; */
     }
 
+    .pre-registration .pre-registraion_box {
+        position: absolute;
+        width:1200px;
+        height: 590.45px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: url(../images/pre-registration_popup/pre-registration_EN.png) no-repeat;
+        background-size:cover;
+    }
+    
     /*section2 */
     .section2 .stella_title h3 {}
 
@@ -118,6 +129,17 @@
 @media screen and (max-width: 1200px) {
     #fp-nav.right {
         display: none;
+    }
+
+    .pre-registration .pre-registraion_box {
+        position: absolute;
+        width: 1028px;
+        height: 506.1px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: url(../images/pre-registration_popup/pre-registration_EN.png) no-repeat;
+        background-size: contain;
     }
 
     /* header */
@@ -236,7 +258,7 @@
         position: absolute;
         z-index: 1;
     }
-    }
+    
 
     .section3 .ruby_slide .char_bg {
         position: absolute;
