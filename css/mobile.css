@@ -12,15 +12,29 @@
 
     .pre-registration .pre-registraion_box {
         position: absolute;
-        width:1200px;
+        width: 1200px;
         height: 590.45px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        background: url(../images/pre-registration_popup/pre-registration_EN.png) no-repeat;
-        background-size:cover;
     }
-    
+
+    .dropbtn {
+        font-size: 16px;
+        width: 186px;
+        font-size: 21px;
+        line-height: 31px;
+    }
+
+
+    .dropdown-content {
+        width: 186px;
+        font-weight: 350;
+        font-size: 21px;
+    }
+
+    .img {
+        width: 17px;
+        height: 16px;
+    }
+
     /*section2 */
     .section2 .stella_title h3 {}
 
@@ -131,15 +145,49 @@
         display: none;
     }
 
+    .dropbtn {
+        background-color: #3A739A;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        width: 160px;
+        font-family: 'Noto Sans CJK KR';
+        font-style: normal;
+        font-weight: 350;
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .dropdown-content {
+        width:160px;
+        font-style: normal;
+        font-weight: 350;
+        font-size: 18px;
+        line-height: 26px;
+    }
+    
+    
+
     .pre-registration .pre-registraion_box {
         position: absolute;
-        width: 1028px;
+        width: 85.667vw;
         height: 506.1px;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
         background: url(../images/pre-registration_popup/pre-registration_EN.png) no-repeat;
         background-size: contain;
+    }
+
+    .pre-registration .pre-registraion_box .exit_3 {
+        width: 23px;
+        height: 23px;
+        background: url(../images/pre-registration_popup/x_icon.png) no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 3%;
+        right: 4.5%;
+        cursor: pointer;
     }
 
     /* header */
@@ -258,7 +306,7 @@
         position: absolute;
         z-index: 1;
     }
-    
+
 
     .section3 .ruby_slide .char_bg {
         position: absolute;
@@ -269,7 +317,7 @@
         position: absolute;
         z-index: 1;
     }
-    
+
 
     .section4 .rodmap_img {
         width: 90vw;
@@ -325,6 +373,10 @@
     }
 
     body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .pre-registration {
         display: none;
     }
 

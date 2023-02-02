@@ -290,14 +290,14 @@ header .pc_header .link_box .twitter:hover {
 .section1 .game_box {
     width: 530px;
     height: 115px;
-    bottom:230px;
+    bottom: 230px;
     position: absolute;
-    bottom:11vh;
-    left:50%;
+    bottom: 11vh;
+    left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     flex-direction: column;
 
 }
@@ -308,7 +308,7 @@ header .pc_header .link_box .twitter:hover {
     background-image: url("../images/game_st_btn.png");
 }
 
-.section1 .game_box h2{
+.section1 .game_box h2 {
     font-family: 'Noto Sans CJK KR';
     font-style: normal;
     font-weight: 400;
@@ -322,7 +322,7 @@ header .pc_header .link_box .twitter:hover {
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
 }
 
-.section1 .game_box span{
+.section1 .game_box span {
     font-family: 'Noto Sans CJK KR';
     font-style: normal;
     font-weight: 400;
@@ -335,7 +335,7 @@ header .pc_header .link_box .twitter:hover {
     text-decoration-line: underline;
     color: #FFEA00;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
-    
+
 }
 
 .section1 video {
@@ -350,7 +350,7 @@ header .pc_header .link_box .twitter:hover {
     width: 27vw;
     height: 365px;
     left: 50%;
-    top:30vh;
+    top: 30vh;
     min-width: 526px;
     transform: translateX(-50%);
 }
@@ -642,9 +642,9 @@ header .pc_header .link_box .twitter:hover {
     height: 46px;
     font-size: 16px;
     color: #333
-}z
+}
 
-.m_wrap .m_content .depth02 li a:before {
+z .m_wrap .m_content .depth02 li a:before {
     display: none
 }
 
@@ -698,12 +698,12 @@ header .pc_header .link_box .twitter:hover {
 
 /* pre-registration popup */
 
-.pre-registration{
+.pre-registration {
     width: 100%;
-    height:100%;
+    height: 100%;
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     /* opacity: 1;
     transition: 0.5s;
     visibility: visible;
@@ -714,23 +714,23 @@ header .pc_header .link_box .twitter:hover {
 
 .pre-registration .pre-registraion_box {
     position: absolute;
-    width:1382px;
-    height:680px;
-    left:50%;
-    top:50%;
+    width: 1382px;
+    height: 680px;
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
-    background: url(../images/pre-registration_popup/pre-registration_EN.png) no-repeat ;
+    background: url(../images/pre-registration_popup/pre-registration_EN.png) no-repeat;
     background-size: cover;
 }
 
-.pre-registration .pre-registraion_box .exit_3{
-    width:31px;
-    height:31px;
+.pre-registration .pre-registraion_box .exit_3 {
+    width: 31px;
+    height: 31px;
     background: url(../images/pre-registration_popup/x_icon.png) no-repeat;
     background-size: cover;
     position: absolute;
-    top: 15px;
-    right: 62px;
+    top: 2.5%;
+    right: 4.5%;
     cursor: pointer;
 }
 
@@ -779,14 +779,6 @@ header .pc_header .link_box .twitter:hover {
     
 }
 
-
-.xoco{
-
-}
-
-.xoxo{
-
-}
 .dropdown_slide .drop_down_popup p{
     font-family: 'Noto Sans CJK KR';
     font-style: normal;
@@ -799,30 +791,32 @@ header .pc_header .link_box .twitter:hover {
  */
 /* Dropdown Button */
 .dropbtn {
-    background-color:  #3A739A;;
+    background-color: #3A739A;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    width:215px;
-    height:38px;
+    width: 215px;
+    /* height: 38px; */
     font-family: 'Noto Sans CJK KR';
     font-style: normal;
     font-weight: 350;
     font-size: 25px;
     transition: 0.5s;
     color: #FFFFFF;
-    
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.imgg{
+.arrow_btn {
+    /* 2023.02.01 */
     width: 20px;
     height: 18px;
     background: url(../images/pre-registration_popup/Polygon.png) no-repeat;
-    position: absolute;
-    top:60%;
-    right:15px;
-    transform: translateY(-50%);
     cursor: pointer;
+    background-position: 50% 50%;
+
 }
 
 /* Dropdown button on hover & focus */
@@ -831,21 +825,27 @@ header .pc_header .link_box .twitter:hover {
 } */
 
 .dropdown {
-    top: 6px;
+    top:1%;
     position: relative;
     display: inline-block;
     position: absolute;
-    left: 58px;
+    left: 5%;
 }
+
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color:  #3A739A;;
-    width:215px;
-    height:38px;
-    /* min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
-    
+    opacity: 0;
+    visibility: hidden;
+    background-color: #3A739A;
+    border: none;
+    cursor: pointer;
+    width: 215px;
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    transition: 0.5s;
+    padding: 0 10px;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .dropdown-content a {
@@ -862,7 +862,12 @@ header .pc_header .link_box .twitter:hover {
 
 }
 
-.show {display:block;}
+.show {
+    /* display: block; */
+    opacity: 1;
+    transition: 0.5s;
+    visibility: visible;
+}
 
 
 /* section 2 */

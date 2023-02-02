@@ -21,25 +21,81 @@ const m_menu_target = document.querySelectorAll('.m_content a')
 const pc_menu_target = document.querySelectorAll('.pc_menu li')
 let targetBody = document.querySelector('body');
 
+/*         
+        2023.02.01 ->
 
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
+        # 요구사항분석
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
+        1. 삼각형을 누르면 하위 메뉴가 서서히 나오면서 삼각형이 회전한다.
+        2. 회전한 삼각형을 다시 누르면 하위 메뉴가 서서히 사라지면서 삼각형이 원래대로 돌아온다.
 
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
+        3. 하위메뉴(日本語)를 클릭하면 하위 메뉴가 서서히 사라지면서 삼각형이 원래대로 돌아온다. 
+        4. 하위메뉴(日本語)를 클릭하면 상위메뉴(English) 랑 타이틀과 컬러가 교체된다.
+
+*/
+
+// 요구사항 1번과 2번.. (오직 메뉴만 열고 닫는 기능을 만든 것..)
+const menuBody = document.getElementById("Dropdown_menu");
+const triangleIcon = document.querySelector(".arrow_btn");
+const dropbtn = document.querySelector(".dropbtn")
+dropbtn.addEventListener('click', menuFunc);
+
+function menuFunc() {
+    if (triangleIcon.style.transform == "" || triangleIcon.style.transform == "rotate(0deg)") {
+        // 클릭 시.. 현재 삼각형이 회전되지 않은 상태 라면..?
+        
+        // 1. 하위 메뉴를 보이게 한다..
+        menuBody.classList.add("show");
+
+        // 2. 삼각형 이미지를 회전시킨다..
+        triangleIcon.style.transform = "rotate(-180deg)";
+        triangleIcon.style.transition = "0.5s";
+
+    } else {
+        // 클릭 시.. 현재 삼각형이 회전 된 상태 라면..?
+
+        // 1. 하위 메뉴를 사라지게 한다..
+        menuBody.classList.remove("show");
+
+        // 2. 삼각형 이미지를 원래대로 회전시킨다..
+        triangleIcon.style.transform = "rotate(0deg)";
+        triangleIcon.style.transition = "0.5s";
     }
-  }
 }
+
+// 요구사항 3번과 4번..
+menuBody.addEventListener('click', menuTitleChange);
+
+function menuTitleChange(e) {
+
+    // 1. 메인타이틀의 글씨를 미리 저장 해놓는다.
+    const mainTitle = document.querySelector(".languageMainTitle");
+    const saveMainTitle = document.querySelector(".languageMainTitle").innerHTML;
+    const subTitle = document.querySelector(".languageSubTitle");
+    const img = document.querySelector(".pre-registraion_box");    
+
+
+   // 2. 메인타이틀 자리에 내가 클릭한 곳의 타이틀을 넣는다..
+    mainTitle.innerHTML = e.target.innerHTML;
+
+
+   // 3. 저장해놨던 메인타이틀 글씨를 서브타이틀에 넣는다..
+    subTitle.innerHTML = saveMainTitle;
+
+
+    // 4. 타이틀 교체가 끝난 후 .. 메인 타이틀 텍스트에 따라 이미지를 변경함..
+    if (mainTitle.innerHTML == "English") {
+        img.style.backgroundImage = "url('./images/pre-registration_popup/pre-registration_EN.png')";
+        img.style.transition = "0.5s";
+    } else if (mainTitle.innerHTML == "日本語") {
+        img.style.backgroundImage = "url('./images/pre-registration_popup/pre-registration_JP.png')";
+        img.style.transition = "0.5s";
+    }
+    // 4. 위에서 만들어놓았던 메뉴 열고 닫기 기능을 가진 함수를 실행한다.
+    menuFunc();
+}
+
+// end
 function show_popup(){
     youTubePopup.classList.remove("close")
 }
