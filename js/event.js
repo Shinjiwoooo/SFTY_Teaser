@@ -22,24 +22,53 @@ const pc_menu_target = document.querySelectorAll('.pc_menu li')
 let targetBody = document.querySelector('body');
 
 
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
+//가입유도배너
+const menuBody = document.getElementById("Dropdown_menu");
+const triangleIcon = document.querySelector(".arrow_btn");
+const dropbtn = document.querySelector(".dropbtn")
+dropbtn.addEventListener('click', menuFunc);
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
+function menuFunc() {
+    if (triangleIcon.style.transform == "" || triangleIcon.style.transform == "rotate(0deg)") {
+        
+        menuBody.classList.add("show");
+        triangleIcon.style.transform = "rotate(-180deg)";
+        triangleIcon.style.transition = "0.5s";
 
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
+    } else {
+
+        menuBody.classList.remove("show");
+
+        triangleIcon.style.transform = "rotate(0deg)";
+        triangleIcon.style.transition = "0.5s";
     }
-  }
 }
+
+menuBody.addEventListener('click', menuTitleChange);
+
+function menuTitleChange(e) {
+    const mainTitle = document.querySelector(".languageMainTitle");
+    const saveMainTitle = document.querySelector(".languageMainTitle").innerHTML;
+    const subTitle = document.querySelector(".languageSubTitle");
+    const img = document.querySelector(".pre-registraion_box");    
+
+
+    mainTitle.innerHTML = e.target.innerHTML;
+
+    subTitle.innerHTML = saveMainTitle;
+
+    if (mainTitle.innerHTML == "English") {
+        img.style.backgroundImage = "url('../images/pre-registration_popup/pre-registration_EN.png')";
+        img.style.transition = "0.5s";
+    } else if (mainTitle.innerHTML == "日本語") {
+        img.style.backgroundImage = "url('../images/pre-registration_popup/pre-registration_JP.png')";
+        img.style.transition = "0.5s";
+    }
+
+    menuFunc();
+}
+
+// end
 function show_popup(){
     youTubePopup.classList.remove("close")
 }
