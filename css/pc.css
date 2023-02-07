@@ -739,7 +739,7 @@ z .m_wrap .m_content .depth02 li a:before {
     height: 92.7%;
     position:absolute;
     bottom:0px;
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color:transparent
     z-index: 10;
 }
 
@@ -850,7 +850,7 @@ z .m_wrap .m_content .depth02 li a:before {
     width: 215px;
     font-family: 'Noto Sans CJK KR';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 350;
     font-size: 25px;
     transition: 0.5s;
     padding: 0 10px;
@@ -1221,7 +1221,7 @@ z .m_wrap .m_content .depth02 li a:before {
 
 .section4 .rodmap_img {
     position: absolute;
-    top: 111px;
+    top: 150px;
     left: 50%;
     transform: translateX(-50%);
     width: 70.594vw;
@@ -1371,7 +1371,7 @@ z .m_wrap .m_content .depth02 li a:before {
     background-image: url("../images/partners_logo.png");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 44.396vw;
+    width: 52.396vw ;
     height: 61.667vh;
     position: absolute;
     left: 50%;

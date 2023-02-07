@@ -63,10 +63,10 @@ function menuTitleChange(e) {
     subTitle.innerHTML = saveMainTitle;
 
     if (mainTitle.innerHTML == "English") {
-        img.style.backgroundImage = "url('../images/pre-registration_popup/pre-registration_EN.png')";
+        img.style.backgroundImage = "url('./images/pre-registration_popup/pre-registration_EN.png')";
         img.style.transition = "0.5s";
     } else if (mainTitle.innerHTML == "日本語") {
-        img.style.backgroundImage = "url('../images/pre-registration_popup/pre-registration_JP.png')";
+        img.style.backgroundImage = "url('./images/pre-registration_popup/pre-registration_JP.png')";
         img.style.transition = "0.5s";
     }
     menuFunc();
