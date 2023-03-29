@@ -5,9 +5,7 @@
     }
 
     .user_acquisition {
-        /* width:21.511vw; */
         left: 18.714vw;
-        /* height: 193.96px; */
     }
 
     .pre-registration .pre-registraion_box {
@@ -163,7 +161,7 @@
         font-style: normal;
         font-weight: 350;
         font-size: 18px;
-        line-height: 26px;
+        /* line-height: 26px; */
     }
     
     
@@ -236,7 +234,7 @@
 
     /* section1 */
 
-    .section1 .game_box {
+    /* .section1 .game_box {
         display: none;
 
     }
@@ -252,7 +250,7 @@
     .section1 .game_box span {
         display: none;
 
-    }
+    } */
 
     .youTube .youTube_box {
         width: 800px;
@@ -376,9 +374,74 @@
         display: none;
     }
 
+
+
+    /* 사전예약배너 */
     .pre-registration {
-        display: none;
+        
     }
+
+
+    .pre-registration .pre-registraion_box {
+        width:81.081vw;
+        height:100%;
+        background-image: url("../images/pre-registration_popup/pre-registration_EN_mb.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top:13%;
+        left:50%;
+        transform: translateX(-50%);
+        z-index: 100;
+    }
+
+
+    .pre-registration .pre-registraion_box .exit_3  {
+        width: 4.189vw;
+        height: 4.189vw;
+        background: url(../images/pre-registration_popup/x_icon.png) no-repeat;
+        background-size: cover;
+        margin-top: 3vw;
+        position: absolute;
+        /* top: 4%; */
+        top:6vw;
+        right: 3%;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        display: inline-block;
+        margin-top: 6vw;
+    }
+    
+    .dropbtn {
+        background-color: #3A739A;
+        border: none;
+        cursor: pointer;
+        width: 34.135vw;
+        height: 6vw;
+        font-family: 'Noto Sans CJK KR';
+        font-style: normal;
+        font-weight: 350;
+        /* font-size: 2.432vw;
+        font-size:4.054vw; */
+        font-size:3.819vw;
+        
+    }
+
+    .dropdown-content {
+        width: 34.135vw;
+        height: 6vw;
+        font-weight: 350;
+        font-size: 3.819vw;
+    }
+    .arrow_btn {
+        width: 2.892vw;
+        height: 2.7vw;
+        background-size: contain;
+    }
+
+
 
     /* header */
 
@@ -892,9 +955,7 @@
         background-image: url("../images/pp07.png");
     }
 
-    .section5 .content_box:nth-child(8)>div {
-        background-image: url("../images/pp08.png");
-    }
+
 
     .section5 .char_text_box {
         background-color: transparent;
@@ -1065,7 +1126,7 @@
 }
 
 /* mobile 최소 300px ~ 대형 휴대기기 425px, 480px */
-@media all and (min-width:300px) and (max-width:425px) {
+@media screen and (max-width: 425px) {
 
     html,
     body {

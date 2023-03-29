@@ -24,6 +24,8 @@
             $(".m_menu04").removeClass("line")
             $(".m_menu05").removeClass("line")
             $(".m_menu06").removeClass("line")
+
+            $(".pre-registraion_box").children('a').attr('href', 'https://bsc-marketplace.stellafantasy.io/m/signup');
           }
           $("header").css({"background" : "transparent"})
           // $(".section1").addClass("on");

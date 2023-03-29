@@ -290,11 +290,11 @@ header .pc_header .link_box .twitter:hover {
 .section1 .game_box {
     width: 530px;
     height: 115px;
-    bottom: 230px;
+    /* bottom: 230px;
     position: absolute;
-    bottom: 11vh;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 11vh; */
+    /* left: 50%;
+    transform: translate(-50%, -50%); */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -335,6 +335,7 @@ header .pc_header .link_box .twitter:hover {
     text-decoration-line: underline;
     color: #FFEA00;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
 
 }
 
@@ -344,37 +345,59 @@ header .pc_header .link_box .twitter:hover {
     object-fit: cover;
 }
 
-.section1 .top_center_logo {
+/* 여기서부터 */
+
+.bg_center_wrap{
     position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50% , -50%);
+    /* background-color:darkblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.section1 .top_center_logo {
+    /* background-color: yellowgreen; */
     z-index: 100;
     width: 27vw;
     height: 365px;
-    left: 50%;
-    top: 30vh;
+    /* position: absolute; */
+    /* transform: translateX(-50%); */
     min-width: 526px;
-    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 2vw;
 }
 
 .section1 .top_center_logo .retangle_box {
-    position: absolute;
+    /* position: absolute;
     transform: translateX(-50%);
-    left: 50%;
+    left: 50%; */
     width: 295px;
     height: 295px;
     background-image: url("../images/str_btn_frame.png");
     background-size: contain;
     background-repeat: no-repeat;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .section1 .top_center_logo .retangle_box .arrow {
-    position: absolute;
+    /* position: absolute;
     transform: translate(-40%, -50%);
     left: 50%;
-    top: 50%;
+    top: 50%; */
     height: 130px;
     /* width: 6vw; */
     width: 113px;
+    margin-left: 20px;
     /* min-width: 115px; */
     background-image: url("../images/play_btn.png");
     background-size: cover;
@@ -385,13 +408,12 @@ header .pc_header .link_box .twitter:hover {
     background-image: url("../images/tittle.png");
     background-repeat: no-repeat;
     background-size: contain;
-    width: 98%;
     width: 526px;
     height: 46px;
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); */
 }
 
 
@@ -401,7 +423,7 @@ header .pc_header .link_box .twitter:hover {
 
 .scroll {
     position: absolute;
-    bottom: 8%;
+    bottom: 6%;
     left: 50%;
     transform: translateX(-50%);
     animation: motion2 0.5s linear 0s infinite alternate;
@@ -739,66 +761,10 @@ z .m_wrap .m_content .depth02 li a:before {
     height: 92.7%;
     position:absolute;
     bottom:0px;
-    background-color:transparent
+    background-color:transparent;
     z-index: 10;
 }
 
-
-/* dropdown_slide */
-/* .dropdown_slide{
-    width:215px;
-    height:38px;
-    text-align: center;
-    line-height: 38px;
-    background: #3A739A;
-    position: absolute;
-    top:5px;
-    left:58px;
-}
-
-.dropdown_slide .drop_down p{
-    font-family: 'Noto Sans CJK KR';
-    font-style: normal;
-    font-weight: 350;
-    font-size: 25px;
-    line-height: 37px;
-    color: #FFFFFF;
-    
-}
-.dropdown_slide .drop_down .arrow_btn{
-    width: 20px;
-    height: 18px;
-    background: url(../images/pre-registration_popup/Polygon.png) no-repeat;
-    position: absolute;
-    top:60%;
-    right:15px;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-.dropdown_slide .drop_down_popup{
-    width:215px;
-    height:38px;
-    text-align: center;
-    line-height: 38px;
-    background: #3A739A;
-    position: relative;
-    margin-top: 2px;
-    position: absolute;
-    z-index: 1;
-    
-}
-
-.dropdown_slide .drop_down_popup p{
-    font-family: 'Noto Sans CJK KR';
-    font-style: normal;
-    font-weight: 350;
-    font-size: 25px;
-    line-height: 37px;
-    color: #FFFFFF;
-    
-}
- */
-/* Dropdown Button */
 .dropbtn {
     background-color: #3A739A;
     font-size: 16px;

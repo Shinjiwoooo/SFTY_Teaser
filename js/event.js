@@ -17,9 +17,16 @@ const mobile_content  = document.querySelector('.gnb_wrap')
 const closeMobileMenu = document.querySelector('.m_close')
 const m_menu_target = document.querySelectorAll('.m_content a')
 
-// querySelectorAll 은 배열형태로 잡힌다.
 const pc_menu_target = document.querySelectorAll('.pc_menu li')
 let targetBody = document.querySelector('body');
+const marketplace_link = document.querySelector('.game_box h2 span')
+
+
+// 틱톡
+const content_box = document.querySelector(".pre-registration .pre-registraion_box .content_box")
+
+function click_banner(){ ttq.track('클릭버튼');
+}
 
 
 const menuBody = document.getElementById("Dropdown_menu");
@@ -28,12 +35,7 @@ const dropbtn = document.querySelector(".dropbtn")
 dropbtn.addEventListener('click', menuFunc);
 
 
-const content_box = document.querySelector(".pre-registration .pre-registraion_box .content_box")
 
-
-function click_banner(){ ttq.track('클릭버튼');
-
-}
 
 function menuFunc() {
     if (triangleIcon.style.transform == "" || triangleIcon.style.transform == "rotate(0deg)") {
@@ -57,22 +59,35 @@ function menuTitleChange(e) {
     const saveMainTitle = document.querySelector(".languageMainTitle").innerHTML;
     const subTitle = document.querySelector(".languageSubTitle");
     const img = document.querySelector(".pre-registraion_box");    
+    const widthSize = window.innerWidth ;
 
     mainTitle.innerHTML = e.target.innerHTML;
 
     subTitle.innerHTML = saveMainTitle;
 
-    if (mainTitle.innerHTML == "English") {
-        img.style.backgroundImage = "url('./images/pre-registration_popup/pre-registration_EN.png')";
-        img.style.transition = "0.5s";
-    } else if (mainTitle.innerHTML == "日本語") {
-        img.style.backgroundImage = "url('./images/pre-registration_popup/pre-registration_JP.png')";
-        img.style.transition = "0.5s";
+    switch (mainTitle.innerHTML) {
+        case "English":
+            if(widthSize > 768) {
+                img.style.backgroundImage = "url('./images/pre-registration_popup/pre-registration_EN.png')";
+            } else {
+                img.style.backgroundImage = "url('./images/pre-registration_popup/pre-registration_EN_mb.png')";
+            }
+            img.style.transition = "0.5s";
+        break;
+        
+        case "日本語":
+            if(widthSize > 768){
+                img.style.backgroundImage = "url('./images/pre-registration_popup/pre-registration_JP.png')";
+            }else{
+                img.style.backgroundImage = "url('./images/pre-registration_popup/pre-registration_JP_mb.png')";
+            }
+            img.style.transition = "0.5s";
+        break;
     }
+
     menuFunc();
 }
 
-// end
 function show_popup(){
     youTubePopup.classList.remove("close")
 }
@@ -85,8 +100,10 @@ function close_linkpopup(){
     linkPopup.classList.add("close")
 }
 
+
 function close_bannerpopup(){
     pre_registrationPopup.classList.add("close")
+    
 }
 
 function open_menu(){
@@ -120,17 +137,11 @@ function close_menu(){
 
 }
 
-//처음에 한마디로 박아놓고 시작한다 li로 눌렀을때도 링크가 타야힌다
 function pc_menu_active() {
     let linkData;
     for (var i = 0; i < pc_menu_target.length; i++) {
         if (pc_menu_target[i] == this) {
-            /*
-                클릭한 메뉴가 WhitePaper 또는 Maketplace 라면 ?
 
-                line 이라는 클래스를 넣지 않는다.
-            */
-            
             if (this.classList.value == 'pc_menu_07' || this.classList.value == 'pc_menu_08') {
 
             } else {
@@ -138,27 +149,12 @@ function pc_menu_active() {
             }
             
             linkData = this.querySelector('a').href.split("#")[1]
-            // console.log(this.querySelector('a').href)
-            // console.log(this.querySelector('a').href.split("#"))
-             //#을 기점으로 오른쪽 왼쪽  배열로 분리 
-            // console.log(linkData)
+
             location.href = `#${linkData}`
-            //`` 백틱안에 쓰는건 전부 string string 안에 변수 추가를 할수 있는데..
-            // `${변수}`=string안에 변수를 넣고 싶을때 $ 씀   #= string
 
         } else {
 
-            /*
-                클릭한 메뉴가 WhitePaper 또는 Maketplace 라면 ?
 
-                선택된 메뉴들 중에서 line 이라는 클래스를 빼지 않는다.
-                
-                -> 이걸 넣지 않는다면 Members 에서 WhitePaper 를 들어갔다가 홈페이지로
-                다시오면 파란선이 아무데도 없음.
-
-                -> WhitePaper 혹은 Maketplace 메뉴를 들어가기 전에 내가 클릭했던
-                라인은 남아있어야 하기 때문에 넣음.
-            */
 
             if (this.classList.value == 'pc_menu_07' || this.classList.value == 'pc_menu_08') {
 
@@ -180,11 +176,6 @@ function hide_mobile_menu (){
         m_menubar.style.display = "block";
     }
 
-    // if(openMobileMenu.style.display == "block") {
-    //     m_menubar.style.display = "none";
-    //     debugger
-    // }
-    
 
 }
 
@@ -208,3 +199,18 @@ m_menubar.addEventListener("click", open_menu)
 closeMobileMenu.addEventListener("click", close_menu)
 window.addEventListener('resize' , hide_mobile_menu)
 content_box.addEventListener('click', click_banner)
+
+marketplace_link.addEventListener("click", () =>{
+    window.open("https://bsc-marketplace.stellafantasy.io/market/character?Request=SignIn");
+});
+
+window.onresize = function(event){
+    if(innerWidth > 768){
+        $(".pre-registraion_box").children('a').attr('href', 'https://bsc-marketplace.stellafantasy.io/market/character?Request=SignUp');
+    }
+    else
+    {
+        $(".pre-registraion_box").children('a').attr('href', 'https://bsc-marketplace.stellafantasy.io/m/signup');
+    }
+
+}
